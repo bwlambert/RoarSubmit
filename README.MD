@@ -11,6 +11,7 @@ To establish a secure shell (SSH) connection to the cluster, use the following c
 
 # SCP to cluster:
 To securely copy (SCP) files to the cluster, use the following command: 
+
 `scp submit-cluster-howto.zip user1@submit.aci.ics.psu.edu:~/submit-cluster-howto.zip`
 
 # Trivial R script example: "sample.R"
@@ -36,7 +37,11 @@ echo "Job Ended at `date`"
 ```
 
 # Command to submit PBS script to queue:
-To submit a PBS script to the queue, use the following command: `qsub -k oe -A open -N aJobName sample.pbs`
+To submit a PBS script to the queue on the open queue, use the following command:
+`qsub -k oe -A open -N aJobName sample.pbs`
+
+To submit on the lab queue, use the following command:
+`qsub -k oe -A mjf283_a_g_sc_default -N aJobName sample.pbs`
 
 # Check execution status:
 To check the status of your job, you can use the following commands:
@@ -73,10 +78,11 @@ https://www.icds.psu.edu/roar-collab-user-guide/
 
 Whereas Roar used MOAB/Torque for job queuing, Roar Collab uses Slurm.  Required changes in job submission and submission scripts are described at the following two URLs.
 
-The job submission process is documented here: 
+The job submission process is documented here:
+
 https://www.icds.psu.edu/running-batch-jobs-on-roar-collab/
 
 A guide on converting PBS scripts to Slurm scripts can be found here:
+
 https://www.icds.psu.edu/converting-moab-roar-submission-scripts-to-slurm-roar-collab/
 
-https://www.icds.psu.edu/running-batch-jobs-on-roar-collab/

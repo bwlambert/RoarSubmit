@@ -1,5 +1,5 @@
-install.packages("doParallel")
-install.packages("foreach")
+#install.packages("doParallel")
+#install.packages("foreach")
 
 library(doParallel)
 library(foreach)
